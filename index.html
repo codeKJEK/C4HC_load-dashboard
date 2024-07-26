@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jQuery.js"></script>
+    <title>Document</title>
+    <style>
+        main {
+            display: flex;
+            justify-content: space-between;
+            width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+            </ul>
+        </nav>
+        <section>
+            <ul>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page1.html">page 1</a></li>
+            </ul>
+        </section>
+        <aside id="dashboard">
+            Loading...
+        </aside>
+    </main>
+</body>
+<script>
+    $.ajax({
+        url: 'data.json',
+        context: ($('#dashboard')),
+        success: function (data) {
+            let dashboardHtml = `
+                    <ul>
+                        <li>Messages (${data.newMessages.length})</li>
+                        <li>Old Messages (${data.oldMessages.length})</li>
+                    </ul>
+                `;
+            $('#dashboard').html(dashboardHtml);
+        }
+    });
+</script>
+
+</html>
