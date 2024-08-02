@@ -16,6 +16,9 @@
     $(window).on('load', function () {
         $('#DashBoard').html('loading...');
         $('#cancelButton').on('click', cancelDashboard);
+        // $('a').each(function () {
+        //     $(this).on('click', cancelDashboard);
+        // });
 
         const dashboardTimeout = setTimeout(loadDashboard, 3000);
 
