@@ -19,7 +19,6 @@
 
     $(window).on('load', function () {
         $('#DashBoard').html('loading...');
-        $('#cancelButton').on('click', cancelDashboard);
         // $('a').each(function () {
         //     $(this).on('click', cancelDashboard);
         // });
@@ -28,6 +27,9 @@
 
         function loadDashboard() {
             $('#cancelButton').unbind('click', cancelDashboard);
+            // $('a').each(function () {
+            //     $(this).unbind('click', cancelDashboard);
+            // });
             $('#DashBoard').load('loaded.html');
         }
 
